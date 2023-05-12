@@ -6,15 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Machine {
+public class Record {
     private Long id;
     private String type;
     private String kind;
-    private java.util.Date arrived;
-    private java.util.Date gone;
-    private String driver;
+    private float sum;
+    private String client;
 
-    protected Machine() {
+    protected Record() {
     }
 
     @Id
@@ -43,32 +42,20 @@ public class Machine {
         this.kind = kind;
     }
 
-    public java.util.Date getArrived() {
-        return arrived;
+    public float getSum() { return sum; }
+
+    public void setSum(float sum) { this.sum = sum; }
+
+    public String getClient() {
+        return client;
     }
 
-    public void setArrived(java.util.Date arrived) {
-        this.arrived = arrived;
-    }
-
-    public java.util.Date getGone() {
-        return gone;
-    }
-
-    public void setGone(java.util.Date gone) {
-        this.gone = gone;
-    }
-
-    public String getDriver() {
-        return driver;
-    }
-
-    public void setDriver(String driver) {
-        this.driver = driver;
+    public void setClient(String client) {
+        this.client = client;
     }
 
     @Override
     public String toString() {
-        return "student [id=" + id + ", type=" + type +", kind=" + kind + ", arrived=" + arrived + ", gone=" + gone + ", driver=" + driver + "]";
+        return "student [id=" + id + ", type=" + type +", kind=" + kind + ", sum=" + sum + ", client=" + client + "]";
     }
 }

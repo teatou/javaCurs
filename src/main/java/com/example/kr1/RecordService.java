@@ -5,22 +5,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MachineService {
+public class RecordService {
     @Autowired
-    private MachineRepo repo;
+    private RecordRepo repo;
 
-    public List<Machine> listAll(String keyword) {
+    public List<Record> listAll(String keyword) {
         if (keyword != null) {
             return repo.search(keyword);
         }
         return repo.findAll();
     }
 
-    public void save(Machine machine) {
-        repo.save(machine);
+    public void save(Record record) {
+        repo.save(record);
     }
 
-    public Machine get(Long id) {
+    public Record get(Long id) {
         return repo.findById(id).get();
     }
 
